@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct DebugTestApp: App {
     var body: some Scene {
-        DocumentGroup(newDocument: DebugTestDocument()) { file in
-            ContentView(document: file.$document)
+        WindowGroup {
+            DashboardView()
+                .preferredColorScheme(.dark)
         }
     }
 }
