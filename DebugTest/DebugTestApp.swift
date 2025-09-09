@@ -9,9 +9,15 @@ import SwiftUI
 import ShakeMirror
 @main
 struct DebugTestApp: App {
+    init() {
+        #if DEBUG
+        Debugger.enable()
+        #endif
+    }
+    
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            NetCaptView()
                 .preferredColorScheme(.dark)
                 .mirrorOnShake()
         }
