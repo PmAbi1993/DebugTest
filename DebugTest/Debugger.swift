@@ -6,14 +6,25 @@
 //
 
 import Foundation
+import os
 
 #if DEBUG
 import ObjectiveC
 
 public enum Debugger {
+    fileprivate static var logFileURL: URL? {
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documents.appendingPathComponent("ApiLogs")
+    }
     /// Call once early in app lifecycle to enable interception
     public static func enable() {
         Swizzler.performSwizzleOnce()
+        if let url = logFileURL {
+            if !FileManager.default.fileExists(atPath: url.path) {
+                try? "".write(to: url, atomically: true, encoding: .utf8)
+            }
+            print("Log file URL: \(url)")
+        }
     }
 }
 
@@ -187,7 +198,20 @@ private extension DebugURLProtocol {
         Response: \(responseJSON)
         ------------------------------
         """
-        print(log)
+        // Append to file
+        if let fileURL = Debugger.logFileURL, let data = log.data(using: .utf8) {
+            do {
+                let fileHandle = try FileHandle(forWritingTo: fileURL)
+                fileHandle.seekToEndOfFile()
+                fileHandle.write(data)
+                fileHandle.closeFile()
+            } catch {
+                // Handle error if needed
+            }
+        }
+        // Use OSLog
+        let logger = Logger(subsystem: "DebugTest", category: "API")
+        logger.info("\(log, privacy: .public)")
     }
 }
 #endif
