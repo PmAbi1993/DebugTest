@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+import ShakeMirror
 @main
 struct DebugTestApp: App {
     var body: some Scene {
         WindowGroup {
             DashboardView()
                 .preferredColorScheme(.dark)
+                .mirrorOnShake()
         }
     }
 }

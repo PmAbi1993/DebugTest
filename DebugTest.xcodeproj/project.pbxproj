@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8EF43CC32E6EF82900307154 /* ShakeMirror in Frameworks */ = {isa = PBXBuildFile; productRef = 8EF43CC22E6EF82900307154 /* ShakeMirror */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8EF43C9A2E6EEC6700307154 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF43CC32E6EF82900307154 /* ShakeMirror in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,7 @@
 				8EF43C8B2E6EEC6500307154 /* DebugTest */,
 				8EF43C9C2E6EEC6700307154 /* DebugTestTests */,
 				8EF43CA62E6EEC6700307154 /* DebugTestUITests */,
+				8EF43CC12E6EF82900307154 /* Frameworks */,
 				8EF43C8A2E6EEC6500307154 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +109,13 @@
 				8EF43CA32E6EEC6700307154 /* DebugTestUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8EF43CC12E6EF82900307154 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			);
 			name = DebugTest;
 			packageProductDependencies = (
+				8EF43CC22E6EF82900307154 /* ShakeMirror */,
 			);
 			productName = DebugTest;
 			productReference = 8EF43C892E6EEC6500307154 /* DebugTest.app */;
@@ -208,6 +222,10 @@
 			);
 			mainGroup = 8EF43C802E6EEC6500307154;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8EF43CBF2E6EF79300307154 /* XCRemoteSwiftPackageReference "mlx-swift" */,
+				8EF43CC02E6EF7C300307154 /* XCLocalSwiftPackageReference "../../../Downloads/ShakeMirror-1.0.0" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8EF43C8A2E6EEC6500307154 /* Products */;
 			projectDirPath = "";
@@ -575,6 +593,32 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8EF43CC02E6EF7C300307154 /* XCLocalSwiftPackageReference "../../../Downloads/ShakeMirror-1.0.0" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/ShakeMirror-1.0.0";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EF43CBF2E6EF79300307154 /* XCRemoteSwiftPackageReference "mlx-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.25.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EF43CC22E6EF82900307154 /* ShakeMirror */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EF43CC02E6EF7C300307154 /* XCLocalSwiftPackageReference "../../../Downloads/ShakeMirror-1.0.0" */;
+			productName = ShakeMirror;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8EF43C812E6EEC6500307154 /* Project object */;
 }
