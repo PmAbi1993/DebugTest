@@ -40,6 +40,9 @@ struct DashboardView: View {
                     Text("Profile")
                 }
         }
+        .onAppear {
+            LogHelper.debug("ASd")
+        }
         .accentColor(.white)
         .tint(.white)
         .background(Color.black)

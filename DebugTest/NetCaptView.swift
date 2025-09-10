@@ -40,6 +40,10 @@ struct NetCaptView: View {
                         makeAPICall(urlString: "https://httpbin.org/get", method: "GET")
                     }
                     .buttonStyle(.borderedProminent)
+                    Button("Call Log") {
+                        LogHelper.debug("Duuuuuuuude")
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
                 .disabled(isLoading)
                 
