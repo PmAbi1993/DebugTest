@@ -41,7 +41,7 @@ struct DashboardView: View {
                 }
         }
         .onAppear {
-            LogHelper.debug("ASd")
+            AppLogger.debug("ASd")
         }
         .accentColor(.white)
         .tint(.white)

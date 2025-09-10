@@ -41,7 +41,7 @@ struct NetCaptView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     Button("Call Log") {
-                        LogHelper.debug("Duuuuuuuude")
+                        AppLogger.debug("Duuuuuuuude")
                     }
                     .buttonStyle(.borderedProminent)
                 }

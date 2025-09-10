@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import os
+import OSLog
 
-enum LogHelper {
+enum AppLogger {
     static let subsystem = "Duuuude"
     
     enum Category {
